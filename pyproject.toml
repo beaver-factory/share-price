@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "nc-stock-alerts"
+version = "0.1.0"
+description = "An app for reading Northcoders Group PLC share price."
+authors = ["xavbruggen <xavier.bruggen@northcoders.com>"]
+readme = "README.md"
+packages = [{include = "nc_share_alerts"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
