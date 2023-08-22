@@ -36,4 +36,4 @@ Then you _just_ need to write some code that gets all the data required for the 
 
 ## Testing
 
-For this repo we follow a user-generated e2e testing strategy. This involves releasing the software to users, at which point then run e2e tests on the software for free! If they stop using the software, we know it needs to improve. Some of them might even tell you which specific bits are broken.
+For this repo we follow a user-generated e2e testing strategy. This involves releasing the software to users, at which point they perform e2e tests on the software for free! If they stop using the software, we know it needs to improve. Some of them might even tell us which specific bits are broken.
