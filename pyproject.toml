@@ -8,6 +8,7 @@ packages = [{include = "nc_share_alerts"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+beautifulsoup4 = "^4.12.2"
 
 
 [build-system]
