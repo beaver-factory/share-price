@@ -6,6 +6,7 @@ on:
 
 env:
   EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
+  SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
 
 jobs:
   get-stonky:
