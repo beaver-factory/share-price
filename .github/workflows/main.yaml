@@ -1,8 +1,11 @@
-name: "STONKS"
+name: 'STONKS'
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/5 * * * *'
+
+env:
+  EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
 
 jobs:
   get-stonky:
@@ -12,6 +15,6 @@ jobs:
         uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.11'
       - uses: Gr1N/setup-poetry@v8
       - run: make run

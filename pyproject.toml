@@ -8,6 +8,7 @@ packages = [{include = "nc_share_alerts"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.31.0"
 sendgrid = "^6.10.0"
 python-dotenv = "^1.0.0"
 
