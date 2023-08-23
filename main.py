@@ -1,7 +1,10 @@
-from get_share_price import get_latest_closing_share_price
+import json
+from send_share_email import send_share_email
 
 
 def main():
-    latest_share_price = get_latest_closing_share_price()
-    print(latest_share_price)
-    return latest_share_price
+    with open('users.json', 'r') as f:
+        users = json.load(f)
+
+    for user in users:
+        send_share_email(user)
