@@ -1,3 +1,6 @@
+from bs4 import BeautifulSoup
+
+
 def calculate_price_change(current_price, last_price):
     diff = current_price-last_price
 
@@ -5,8 +8,6 @@ def calculate_price_change(current_price, last_price):
 
 
 def insert_into_html(base_path, copy):
-    from bs4 import BeautifulSoup
-
     with open(base_path, 'r', encoding='utf-8') as html_file:
         base_content = html_file.read()
 
@@ -26,8 +27,6 @@ def insert_into_html(base_path, copy):
 
 
 def merge_html(base_path, new_path):
-    from bs4 import BeautifulSoup
-
     with open(base_path, 'r', encoding='utf-8') as html_file:
         base_content = html_file.read()
 
