@@ -2,8 +2,8 @@ name: 'STONKS'
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
+  # schedule:
+  #   - cron: '*/5 * * * *'
 
 env:
   EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
