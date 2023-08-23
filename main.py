@@ -1,16 +1,17 @@
 import json
 from send_share_email import send_share_email
-from get_share_price import get_latest_closing_share_price
+from get_share_price import get_share_prices
+from .utils.utils import calculate_price_change
 
 
 def main():
     with open('users.json', 'r') as f:
         users = json.load(f)
 
-    share_price = get_latest_closing_share_price()
+    share_prices = get_share_prices()
 
     for user in users:
-        send_share_email(user, share_price)
+        send_share_email(user, share_prices)
 
 
 main()
