@@ -1,14 +1,14 @@
 import json
 from send_share_email import send_share_email
-from get_share_price import get_latest_closing_share_price
 from utils.utils import calculate_price_change
+from get_share_price import get_share_prices
 
 
 def main():
     with open('users.json', 'r') as f:
         users = json.load(f)
 
-    share_price = get_latest_closing_share_price()
+    share_price = get_share_prices()
 
     week_change = calculate_price_change(share_price.day, share_price.week)
     month_change = calculate_price_change(share_price.day, share_price.month)
