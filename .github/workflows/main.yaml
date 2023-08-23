@@ -1,6 +1,7 @@
 name: 'STONKS'
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
 
@@ -18,4 +19,6 @@ jobs:
         with:
           python-version: '3.11'
       - uses: Gr1N/setup-poetry@v8
+      - name: install dependencies
+        run: poetry install
       - run: make run
