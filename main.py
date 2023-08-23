@@ -1,7 +1,6 @@
 import json
 from send_share_email import send_share_email
 from get_share_price import get_share_prices
-from .utils.utils import calculate_price_change
 
 
 def main():
