@@ -2,7 +2,7 @@ import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
-from .utils.utils import insert_into_html
+from utils import insert_into_html
 
 load_dotenv()
 
