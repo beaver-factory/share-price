@@ -1,2 +1,4 @@
 def calculate_price_change(current_price, last_price, ):
-    return current_price/last_price*100
+    diff = current_price-last_price
+
+    return (diff/last_price)*100
