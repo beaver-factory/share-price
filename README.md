@@ -6,8 +6,8 @@ This app provides weekly updates on the performance of the [Northcoders Groups P
 
 | Version | Update       | Feature                        | Completed |
 | ------- | ------------ | ------------------------------ | --------- |
-| v0.1.0  | Email        | Mid-week price snapshot        |   ✅      |
-| v0.2.0  | Email        | %/£ change in last week        |           |
+| v0.1.0  | Email        | Mid-week price snapshot        | ✅        |
+| v0.2.0  | Email        | %/£ change in last week        | ✅        |
 | v0.3.0  | Email        | %/£ change in last week vs AIM |           |
 | v0.4.0  | Email        | %/£/AIM change in last 28 days |           |
 | v0.5.0  | Email        | %/£/AIM change in last 6 month |           |
