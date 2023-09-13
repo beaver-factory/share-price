@@ -33,13 +33,44 @@ def main():
     html_data_string = f"""
     <h3>The current share price is: £{share_price["day"]}</h3>
     <table border='1' style='border-collapse:collapse;'>
-    <tr><th style="padding: 10px">Time Period</th><th style="padding: 10px">Share Price</th><th style="padding: 10px">% Change</th><th style="padding: 10px">£ Change</th></tr>
-    <tr><td style="padding: 10px;">Today</td><td style="padding: 10px;">{share_price["day"]}</td><td style="padding: 10px;">0</td><td style="padding: 10px;">£0</td></tr>
-    <tr><td style="padding: 10px;">Last Week</td><td style="padding: 10px;">{share_price["week"]}</td><td style="padding: 10px;">{week_change}</td><td style="padding: 10px;">£{week_change_abs}</td></tr>
-    <tr><td style="padding: 10px;">Last 28 Days</td><td style="padding: 10px;">{share_price["month"]}</td><td style="padding: 10px;">{month_change}</td><td style="padding: 10px;">£{month_change_abs}</td></tr>
-    <tr><td style="padding: 10px;">Last 6 Months</td><td style="padding: 10px;">{share_price["half_year"]}</td><td style="padding: 10px;">{half_change}</td><td style="padding: 10px;">£{half_change_abs}</td></tr>
-    <tr><td style="padding: 10px;">Last Year</td><td style="padding: 10px;">{share_price["year"]}</td><td style="padding: 10px;">{year_change}</td><td style="padding: 10px;">£{year_change_abs}</td></tr>
-    </table>"""
+    <tr>
+        <th style="padding: 10px">Time Period</th>
+        <th style="padding: 10px">Share Price</th>
+        <th style="padding: 10px">% Change</th>
+        <th style="padding: 10px">£ Change</th>
+    </tr>
+    <tr>
+        <td style="padding: 10px;">Today</td>
+        <td style="padding: 10px;">{share_price["day"]}</td>
+        <td style="padding: 10px;">0</td>
+        <td style="padding: 10px;">£0</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px;">Last Week</td>
+        <td style="padding: 10px;">{share_price["week"]}</td>
+        <td style="padding: 10px;">{week_change}</td>
+        <td style="padding: 10px;">£{week_change_abs}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px;">Last 28 Days</td>
+        <td style="padding: 10px;">{share_price["month"]}</td>
+        <td style="padding: 10px;">{month_change}</td>
+        <td style="padding: 10px;">£{month_change_abs}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px;">Last 6 Months</td>
+        <td style="padding: 10px;">{share_price["half_year"]}</td>
+        <td style="padding: 10px;">{half_change}</td>
+        <td style="padding: 10px;">£{half_change_abs}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px;">Last Year</td>
+        <td style="padding: 10px;">{share_price["year"]}</td>
+        <td style="padding: 10px;">{year_change}</td>
+        <td style="padding: 10px;">£{year_change_abs}</td>
+    </tr>
+    </table>
+    """
 
     for user in users:
         send_share_email(user, html_data_string)
