@@ -41,7 +41,7 @@ def main():
     </tr>
     <tr>
         <td style="padding: 10px;">Today</td>
-        <td style="padding: 10px;">£{round(share_price["day"],2)}</td>
+        <td style="padding: 10px;">£{round(share_price["day"]/100,2)}</td>
         <td style="padding: 10px;">-</td>
         <td style="padding: 10px;">-</td>
     </tr>
