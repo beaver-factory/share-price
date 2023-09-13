@@ -32,7 +32,7 @@ def main():
 
     html_data_string = f"""
     <h3>The current share price is: {share_price["day"]}</h3>
-    <table border='1' style='border-collapse:collapse;'>
+    <table border='1' style='border-collapse:collapse;padding:10px;'>
     <tr><th>Time Period</th><th>Share Price</th><th>% Change</th><th>£ Change</th></tr>
     <tr><td>Today</td><td>{share_price["day"]}</td><td>0</td><td>£0</td></tr>
     <tr><td>Last Week</td><td>{share_price["week"]}</td><td>{week_change}</td><td>£{week_change_abs}</td></tr>
