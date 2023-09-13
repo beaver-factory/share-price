@@ -7,6 +7,10 @@ def calculate_price_change(current_price, last_price):
     return (diff/last_price)*100
 
 
+def calculate_absolute_change(current_price, last_price):
+    return current_price-last_price
+
+
 def insert_into_html(base_path, copy):
     with open(base_path, 'r', encoding='utf-8') as html_file:
         base_content = html_file.read()
