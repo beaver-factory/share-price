@@ -33,11 +33,12 @@ def main():
     html_data_string = f"""
     <h3>The current share price is: {share_price["day"]}</h3>
     <table>
-    <tr><th>Time Period</th><th>Share Price</th><th>% Change</th></tr><tr><td>Today</td><td>{share_price["day"]}</td><td>0</td></tr>
-    <tr><td>Last Week</td><td>{share_price["week"]}</td><td>{week_change}</td><td>{week_change_abs}</td></tr>
-    <tr><td>Last 28 Days</td><td>{share_price["month"]}</td><td>{month_change}</td><td>{month_change_abs}</td></tr>
-    <tr><td>Last 6 Months</td><td>{share_price["half_year"]}</td><td>{half_change}</td><td>{half_change_abs}</td></tr>
-    <tr><td>Last Year</td><td>{share_price["year"]}</td><td>{year_change}</td><td>{year_change_abs}</td></tr>
+    <tr><th>Time Period</th><th>Share Price</th><th>% Change</th><th>£ Change</th></tr>
+    <tr><td>Today</td><td>{share_price["day"]}</td><td>0</td><td>£0</td></tr>
+    <tr><td>Last Week</td><td>{share_price["week"]}</td><td>{week_change}</td><td>£{week_change_abs}</td></tr>
+    <tr><td>Last 28 Days</td><td>{share_price["month"]}</td><td>{month_change}</td><td>£{month_change_abs}</td></tr>
+    <tr><td>Last 6 Months</td><td>{share_price["half_year"]}</td><td>{half_change}</td><td>£{half_change_abs}</td></tr>
+    <tr><td>Last Year</td><td>{share_price["year"]}</td><td>{year_change}</td><td>£{year_change_abs}</td></tr>
     </table>"""
 
     for user in users:
