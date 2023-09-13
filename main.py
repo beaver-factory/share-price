@@ -32,7 +32,7 @@ def main():
         share_price["day"], share_price["year"])/100, 2)
     
     changes = {
-        week_change, week_change_abs, month_change, month_change_abs, half_change, half_change_abs, year_change, year_change_abs
+        "week_change": week_change, "week_change_abs": week_change_abs, "month_change": month_change, "month_change_abs": month_change_abs, "half_change": half_change, "half_change_abs": half_change_abs, "year_change": year_change, "year_change_abs": year_change_abs
     }
 
     html_data_string = f"""
