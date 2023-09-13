@@ -22,7 +22,4 @@ def post_message_to_slack(share_price, changes):
         ['Last Year', share_price['year'], changes['year_change'], f"£{changes['year_change_abs']}p"]
     ], headers=['Time Period', 'Share Price', '% Change', 'p Change'])}
     """
-
-    return requests.post(os.getenv('WEBHOOK_URL'), json.dumps({
-        'text': copy
-    }))
+    return requests.post(os.getenv("WEBHOOK_URL"), json.dumps({"channel": "nc-shares", "text": copy}))
