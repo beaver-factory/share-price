@@ -49,25 +49,25 @@ def main():
         <td style="padding: 10px;">Last Week</td>
         <td style="padding: 10px;">{share_price["week"]}</td>
         <td style="padding: 10px; color: {'green' if week_change > 0 else 'red'};">{week_change}</td>
-        <td style="padding: 10px; {'green' if week_change_abs > 0 else 'red'};">£{week_change_abs}</td>
+        <td style="padding: 10px; color: {'green' if week_change_abs > 0 else 'red'};">£{week_change_abs}</td>
     </tr>
     <tr>
         <td style="padding: 10px;">Last 28 Days</td>
         <td style="padding: 10px;">{share_price["month"]}</td>
-        <td style="padding: 10px; {'green' if month_change > 0 else 'red'};">{month_change}</td>
-        <td style="padding: 10px; {'green' if month_change_abs > 0 else 'red'};">£{month_change_abs}</td>
+        <td style="padding: 10px; color: {'green' if month_change > 0 else 'red'};">{month_change}</td>
+        <td style="padding: 10px; color: {'green' if month_change_abs > 0 else 'red'};">£{month_change_abs}</td>
     </tr>
     <tr>
         <td style="padding: 10px;">Last 6 Months</td>
         <td style="padding: 10px;">{share_price["half_year"]}</td>
-        <td style="padding: 10px; {'green' if half_change > 0 else 'red'};">{half_change}</td>
-        <td style="padding: 10px; {'green' if half_change_abs > 0 else 'red'};">£{half_change_abs}</td>
+        <td style="padding: 10px; color: {'green' if half_change > 0 else 'red'};">{half_change}</td>
+        <td style="padding: 10px; color: {'green' if half_change_abs > 0 else 'red'};">£{half_change_abs}</td>
     </tr>
     <tr>
         <td style="padding: 10px;">Last Year</td>
         <td style="padding: 10px;">{share_price["year"]}</td>
-        <td style="padding: 10px; {'green' if year_change > 0 else 'red'};">{year_change}</td>
-        <td style="padding: 10px; {'green' if year_change_abs > 0 else 'red'};">£{year_change_abs}</td>
+        <td style="padding: 10px; color: {'green' if year_change > 0 else 'red'};">{year_change}</td>
+        <td style="padding: 10px; color: {'green' if year_change_abs > 0 else 'red'};">£{year_change_abs}</td>
     </tr>
     </table>
     """
