@@ -8,6 +8,7 @@ on:
 env:
   EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
   SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+  WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
 jobs:
   get-stonky:
