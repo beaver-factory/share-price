@@ -8,7 +8,7 @@ def main():
     with open('users.json', 'r') as f:
         users = json.load(f)
 
-    share_price = get_share_prices()
+    share_price = round(get_share_prices(), 2)
 
     week_change = round(calculate_price_change(
         share_price["day"], share_price["week"]), 2)
