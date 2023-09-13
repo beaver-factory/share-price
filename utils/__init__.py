@@ -51,3 +51,13 @@ def merge_html(base_path, new_path):
         return amended_html
     else:
         print("Element not found.")
+
+
+def generate_row(timeframe, share_price, percent_change, abs_change):
+    return f"""
+    <tr>
+        <td style="padding: 10px;">{timeframe}</td>
+        <td style="padding: 10px;">£{share_price}</td>
+        <td style="padding: 10px; color: {'green' if percent_change > 0 else 'red'};">{percent_change}%</td>
+        <td style="padding: 10px; color: {'green' if abs_change > 0 else 'red'};">£{abs_change}</td>
+    </tr>"""

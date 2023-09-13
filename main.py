@@ -1,6 +1,6 @@
 import json
 from send_share_email import send_share_email
-from utils import calculate_price_change, calculate_absolute_change
+from utils import calculate_price_change, calculate_absolute_change, generate_row
 from get_share_price import get_share_prices
 
 
@@ -45,30 +45,10 @@ def main():
         <td style="padding: 10px;">-</td>
         <td style="padding: 10px;">-</td>
     </tr>
-    <tr>
-        <td style="padding: 10px;">Last Week</td>
-        <td style="padding: 10px;">£{share_price["week"]}</td>
-        <td style="padding: 10px; color: {'green' if week_change > 0 else 'red'};">{week_change}%</td>
-        <td style="padding: 10px; color: {'green' if week_change_abs > 0 else 'red'};">£{week_change_abs}</td>
-    </tr>
-    <tr>
-        <td style="padding: 10px;">Last 28 Days</td>
-        <td style="padding: 10px;">£{share_price["month"]}</td>
-        <td style="padding: 10px; color: {'green' if month_change > 0 else 'red'};">{month_change}%</td>
-        <td style="padding: 10px; color: {'green' if month_change_abs > 0 else 'red'};">£{month_change_abs}</td>
-    </tr>
-    <tr>
-        <td style="padding: 10px;">Last 6 Months</td>
-        <td style="padding: 10px;">£{share_price["half_year"]}</td>
-        <td style="padding: 10px; color: {'green' if half_change > 0 else 'red'};">{half_change}%</td>
-        <td style="padding: 10px; color: {'green' if half_change_abs > 0 else 'red'};">£{half_change_abs}</td>
-    </tr>
-    <tr>
-        <td style="padding: 10px;">Last Year</td>
-        <td style="padding: 10px;">£{share_price["year"]}</td>
-        <td style="padding: 10px; color: {'green' if year_change > 0 else 'red'};">{year_change}%</td>
-        <td style="padding: 10px; color: {'green' if year_change_abs > 0 else 'red'};">£{year_change_abs}</td>
-    </tr>
+    {generate_row('Last Week', share_price['week'], week_change, week_change_abs)}
+    {generate_row('Last 28 Days', share_price['month'], month_change, month_change_abs)}
+    {generate_row('Last 6 Months', share_price['half_year'], half_change, half_change_abs)}
+    {generate_row('Last Year', share_price['year'], week_change, week_change_abs)}
     </table>
     """
 
