@@ -31,7 +31,7 @@ def main():
         share_price["day"], share_price["year"])/100, 2)
 
     html_data_string = f"""
-    <h3>The current share price is: £{round(share_price["day"], 2)}</h3>
+    <h3>The current share price is: £{round(share_price["day"]/100, 2)}</h3>
     <table border='1' style='border-collapse:collapse;'>
     <tr>
         <th style="padding: 10px">Time Period</th>
