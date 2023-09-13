@@ -48,7 +48,7 @@ def main():
     {generate_row('Last Week', round(share_price['week'],2), week_change, week_change_abs)}
     {generate_row('Last 28 Days', round(share_price['month'],2), month_change, month_change_abs)}
     {generate_row('Last 6 Months', round(share_price['half_year'],2), half_change, half_change_abs)}
-    {generate_row('Last Year', round(share_price['year'],2), week_change, week_change_abs)}
+    {generate_row('Last Year', round(share_price['year'],2),year_change, year_change_abs)}
     </table>
     """
 
