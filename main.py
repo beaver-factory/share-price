@@ -2,6 +2,7 @@ import json
 from send_share_email import send_share_email
 from utils import calculate_price_change, calculate_absolute_change, generate_row
 from get_share_price import get_share_prices
+from post_to_slack import post_message_to_slack
 
 
 def main():
@@ -29,6 +30,10 @@ def main():
         share_price["day"], share_price["year"]), 2)
     year_change_abs = round(calculate_absolute_change(
         share_price["day"], share_price["year"])/100, 2)
+    
+    changes = {
+        week_change, week_change_abs, month_change, month_change_abs, half_change, half_change_abs, year_change, year_change_abs
+    }
 
     html_data_string = f"""
     <h3>The current share price is: £{round(share_price["day"]/100, 2)}</h3>
@@ -54,6 +59,8 @@ def main():
 
     for user in users:
         send_share_email(user, html_data_string)
+
+    post_message_to_slack(share_price, changes)
 
 
 main()
