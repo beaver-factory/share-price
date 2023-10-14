@@ -5,7 +5,7 @@ on:
     # schedule:
     #   - cron: '*/5 * * * *'
     inputs:
-      EOD_STOCK:
+      EOD_API_STOCK:
         type: string
         required: true
         description: The eodhd api stock code for the stock you want to get a report on
