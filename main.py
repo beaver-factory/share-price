@@ -8,12 +8,6 @@ load_dotenv()
 
 
 def main():
-    SEND_KEY = os.getenv("SEND_KEY")
-    SEND_KEY_SECRET = os.getenv("SEND_KEY_SECRET")
-
-    if (SEND_KEY != SEND_KEY_SECRET):
-        raise Exception("Invalid send key.")
-
     users_string = os.getenv("TO_EMAILS")
 
     users = users_string.split(', ')
