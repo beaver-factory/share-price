@@ -3,11 +3,11 @@ name: "Send Stock Report"
 on:
   workflow_dispatch:
     # schedule:
-    #   - cron: '*/5 * * * *'
+    #   - cron: '0 12 * * 4'
     inputs:
       EOD_API_STOCK:
         type: string
-        required: true
+        default: "CODE.LSE"
         description: The eodhd api stock code for the stock you want to get a report on
 
 env:
