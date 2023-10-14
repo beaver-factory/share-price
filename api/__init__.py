@@ -67,18 +67,22 @@ def get_date_index(parsed_response, num_weeks):
 def send_share_email(user_email, html_data_string):
     SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
     if (not SENDGRID_API_KEY):
-        raise Exception('Missing Sendgrid API key')
+        raise Exception('Missing Sendgrid API key.')
 
     FROM_EMAIL = os.getenv("FROM_EMAIL")
     if (not FROM_EMAIL):
-        raise Exception('Missing Sendgrid Acc Email')
+        raise Exception('Missing Sendgrid Acc Email.')
+
+    EOD_API_STOCK = os.getenv("EOD_API_STOCK")
+    if (not EOD_API_STOCK):
+        raise Exception('Missing stock code.')
 
     email_body = insert_into_html('email_copy.html', html_data_string)
 
     message = Mail(
         from_email=FROM_EMAIL,
         to_emails=user_email,
-        subject='Your Share Price Update!',
+        subject=f'Your {EOD_API_STOCK} Share Price Update!',
         html_content=email_body
     )
 

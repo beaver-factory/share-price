@@ -4,10 +4,15 @@ on:
   workflow_dispatch:
     # schedule:
     #   - cron: '*/5 * * * *'
+    inputs:
+      EOD_STOCK:
+        type: string
+        required: true
+        description: The eodhd api stock code for the stock you want to get a report on
 
 env:
   EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
-  EOD_API_STOCK: ${{ secrets.EOD_API_STOCK }}
+  EOD_API_STOCK: ${{ inputs.EOD_API_STOCK }}
   SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
   TO_EMAILS: ${{ secrets.TO_EMAILS }}
   FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
