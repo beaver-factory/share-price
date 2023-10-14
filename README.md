@@ -11,7 +11,7 @@ This app provides weekly updates on the performance of the [Northcoders Groups P
 | v0.3.0  | Email        | %/£ change in last 28 days   | ✅        |
 | v0.4.0  | Email        | %/£ change in last 6 month   | ✅        |
 | v0.5.0  | Email        | %/£ change in last year      | ✅        |
-| v0.6.0  | Email, Slack | implement slack notification |           |
+| v0.6.0  | Email, Slack | implement slack notification | ✅        |
 | v0.7.0  | Email, Slack | a nice graph                 |           |
 | v0.8.0  | Email, Slack | User can choose stock        |           |
 
