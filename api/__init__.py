@@ -97,7 +97,8 @@ def post_message_to_slack(share_price, changes):
     WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
     if (not WEBHOOK_URL):
-        raise Exception('Missing Slack Webhook URL')
+        print('Slack Webhook not set, terminating...')
+        return None
 
     copy = f"""
     Here's your stock report!\n\n

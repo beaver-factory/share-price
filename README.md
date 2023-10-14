@@ -38,6 +38,12 @@ TO_EMAILS='< a comma+space separated list of emails, or a single email >'
 SENDGRID_API_KEY='< a valid sendgrid api key >'
 ```
 
+Optional variables:
+
+```
+WEBHOOK_URL='< a slack webhook url to send a table of stock data to a slack bot >'
+```
+
 ### Running
 
 ```bash

@@ -19,6 +19,7 @@ def main():
         send_share_email(user, html_data_string)
 
     post_message_to_slack(share_price, changes)
+    return 0
 
 
 main()
