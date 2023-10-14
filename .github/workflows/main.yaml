@@ -5,6 +5,10 @@ on:
     # schedule:
     #   - cron: '*/5 * * * *'
     inputs:
+      EOD_API_KEY:
+        type: string
+        required: true
+        description: API key for eodhd api
       EOD_API_STOCK:
         type: string
         required: true
@@ -21,19 +25,13 @@ on:
         type: string
         required: true
         description: Sendgrid API key
-      password:
-        type: string
-        required: true
-        description: Password to enable the workflow to run :)
 
 env:
-  EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
+  EOD_API_KEY: ${{ inputs.EOD_API_KEY }}
   EOD_API_STOCK: ${{ inputs.EOD_API_STOCK }}
-  SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+  SENDGRID_API_KEY: ${{ inputs.SENDGRID_API_KEY }}
   FROM_EMAIL: ${{ inputs.FROM_EMAIL}}
-  SEND_KEY: ${{ inputs.password}}
-  SEND_KEY_SECRET: ${{ secrets.SEND_KEY }}
-  WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+  WEBHOOK_URL: ${{ inputs.WEBHOOK_URL }}
 
 jobs:
   get-stonky:
