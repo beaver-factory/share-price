@@ -31,8 +31,6 @@ Required variables:
 ```
 EOD_API_KEY='< an eodhd api key >'
 EOD_API_STOCK='< an eodhd api stock code >'
-SEND_KEY_SECRET='< a unique key, identical to SEND_KEY, can be anything >'
-SEND_KEY='< a unique key, identical to SEND_KEY_SECRET, can be anything >'
 FROM_EMAIL='< a valid sendgrid account email >'
 TO_EMAILS='< a comma+space separated list of emails, or a single email >'
 SENDGRID_API_KEY='< a valid sendgrid api key >'
