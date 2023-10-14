@@ -17,6 +17,10 @@ on:
         type: string
         required: true
         description: Email that the notification is sent from - a valid sendgrid account email.
+      SENDGRID_KEY:
+        type: string
+        required: true
+        description: Sendgrid API key
       password:
         type: string
         required: true
