@@ -101,4 +101,4 @@ def generate_html_string(share_price):
     </table>
     """
 
-    return {html_data_string, changes}
+    return html_data_string, changes

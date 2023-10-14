@@ -1,12 +1,22 @@
 import json
 from html_tools import generate_html_string
 from api import get_share_prices, send_share_email, post_message_to_slack
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def main():
-    with open('users.json', 'r') as f:
-        users = json.load(f)
+    SEND_KEY = os.getenv("SEND_KEY")
+    SEND_KEY_SECRET = os.getenv("SEND_KEY_SECRET")
 
+    if (SEND_KEY != SEND_KEY_SECRET):
+        raise Exception("Invalid send key.")
+
+    users_string = os.getenv("TO_EMAILS")
+
+    users = users_string.split(', ')
     share_price = get_share_prices()
 
     html_data_string, changes = generate_html_string(share_price)

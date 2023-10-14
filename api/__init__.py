@@ -16,9 +16,16 @@ def get_share_prices():
 
     # response = requests.get(
     #     'https://eodhistoricaldata.com/api/eod/MCD.US?api_token=demo&fmt=json')
+    EOD_API_KEY = os.getenv("EOD_API_KEY")
+    if (not EOD_API_KEY):
+        raise Exception('Missing EOD API key.')
+
+    EOD_API_STOCK = os.getenv("EOD_API_STOCK")
+    if (not EOD_API_STOCK):
+        raise Exception('Missing EOD stock code.')
 
     response = requests.get(
-        f'https://eodhistoricaldata.com/api/eod/CODE.LSE?api_token={os.getenv("EOD_API_KEY")}&fmt=json')
+        f'https://eodhistoricaldata.com/api/eod/{os.getenv("EOD_API_STOCK")}?api_token={os.getenv("EOD_API_KEY")}&fmt=json')
 
     parsed_response = json.loads(response.content)
     week_index = get_date_index(parsed_response, 1)
@@ -38,8 +45,14 @@ def get_share_prices():
 
 
 def get_date_index(parsed_response, num_weeks):
-    today = DT.date.today()
-    week_ago = today - DT.timedelta(weeks=num_weeks)
+
+    start_date = DT.date.today()
+    dayNumber = start_date.weekday()
+    fridayIndex = 4
+    daysAgo = (7 + dayNumber - fridayIndex) % 7
+    targetDate = start_date - DT.timedelta(days=daysAgo)
+
+    week_ago = targetDate - DT.timedelta(weeks=num_weeks)
     week_str = week_ago.strftime('%Y-%m-%d')
 
     week_index = 0
@@ -53,13 +66,19 @@ def get_date_index(parsed_response, num_weeks):
 
 def send_share_email(user_email, html_data_string):
     SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+    if (not SENDGRID_API_KEY):
+        raise Exception('Missing Sendgrid API key')
+
+    FROM_EMAIL = os.getenv("FROM_EMAIL")
+    if (not FROM_EMAIL):
+        raise Exception('Missing Sendgrid Acc Email')
 
     email_body = insert_into_html('email_copy.html', html_data_string)
 
     message = Mail(
-        from_email='teyah.brennen-davies@northcoders.com',
+        from_email='{FROM_EMAIL}',
         to_emails=user_email,
-        subject='Your NC Share Price Update!',
+        subject='Your Share Price Update!',
         html_content=email_body
     )
 
@@ -71,6 +90,10 @@ def send_share_email(user_email, html_data_string):
 
 
 def post_message_to_slack(share_price, changes):
+    WEBHOOK_URL = os.getenv("WEBHOOK_URL")
+
+    if (not WEBHOOK_URL):
+        raise Exception('Missing Slack Webhook URL')
 
     copy = f"""
     Here's your stock report!\n\n
