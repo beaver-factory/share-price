@@ -4,34 +4,14 @@ on:
   workflow_dispatch:
     # schedule:
     #   - cron: '*/5 * * * *'
-    inputs:
-      EOD_API_KEY:
-        type: string
-        required: true
-        description: API key for eodhd api
-      EOD_API_STOCK:
-        type: string
-        required: true
-        description: The stock you want a report on, taken from https://eodhd.com/financial-apis/api-for-historical-data-and-volumes/
-      TO_EMAILS:
-        type: string
-        required: true
-        description: Comma+space separated list of emails, e.g 'test@test.com, test2@test.com, test3@test.com''
-      FROM_EMAIL:
-        type: string
-        required: true
-        description: Email that the notification is sent from - a valid sendgrid account email.
-      SENDGRID_KEY:
-        type: string
-        required: true
-        description: Sendgrid API key
 
 env:
-  EOD_API_KEY: ${{ inputs.EOD_API_KEY }}
-  EOD_API_STOCK: ${{ inputs.EOD_API_STOCK }}
-  SENDGRID_API_KEY: ${{ inputs.SENDGRID_API_KEY }}
-  FROM_EMAIL: ${{ inputs.FROM_EMAIL}}
-  WEBHOOK_URL: ${{ inputs.WEBHOOK_URL }}
+  EOD_API_KEY: ${{ secrets.EOD_API_KEY }}
+  EOD_API_STOCK: ${{ secrets.EOD_API_STOCK }}
+  SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+  TO_EMAILS: ${{ secrets.TO_EMAILS }}
+  FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+  WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
 jobs:
   get-stonky:
