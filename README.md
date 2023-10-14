@@ -1,6 +1,6 @@
-# SHARE-ALERTS
+# SHARE-PRICE
 
-This app was created as part of a collection of time-limited code challenges, usually used as a way to explore different tech. It provides weekly updates on the performance of a share price chosen by the user.
+This app was created as part of a collection of time-limited code challenges, usually used as a way to explore different tech. It provides weekly updates on the performance of a share price chosen by the user. Note the cron is currently disabled, but the workflow is still available to be run manually.
 
 ## Roadmap
 
@@ -12,8 +12,8 @@ This app was created as part of a collection of time-limited code challenges, us
 | v0.4.0  | Email        | %/£ change in last 6 month   | ✅        |
 | v0.5.0  | Email        | %/£ change in last year      | ✅        |
 | v0.6.0  | Email, Slack | implement slack notification | ✅        |
-| v0.7.0  | Email, Slack | a nice graph                 |           |
-| v0.8.0  | Email, Slack | User can choose stock        | ✅        |
+| v0.7.0  | Email, Slack | User can choose stock        | ✅        |
+| v0.8.0  | Email, Slack | a nice graph                 |           |
 
 ## Dependencies
 
@@ -23,6 +23,8 @@ This app was created as part of a collection of time-limited code challenges, us
 | [Poetry](https://python-poetry.org/docs/#installation) | 1.5.1   |
 
 ## Run locally
+
+Clone the repo, ensure that you have a .env file with the below variables, or run it in github with the below set as secrets. You will need an eodhd.com api key, and a sendgrid api key. If you want to use the slack implementation you will need to set up a slack channel and bot separately.
 
 ### Environment
 
