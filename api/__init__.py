@@ -3,6 +3,10 @@ import json
 import os
 import datetime as DT
 from dotenv import load_dotenv
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from html_tools import insert_into_html
+from tabulate import tabulate
 
 load_dotenv()
 
@@ -45,3 +49,39 @@ def get_date_index(parsed_response, num_weeks):
             break
 
     return week_index
+
+
+def send_share_email(user_email, html_data_string):
+    SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+
+    email_body = insert_into_html('email_copy.html', html_data_string)
+
+    message = Mail(
+        from_email='teyah.brennen-davies@northcoders.com',
+        to_emails=user_email,
+        subject='Your NC Share Price Update!',
+        html_content=email_body
+    )
+
+    sg = SendGridAPIClient(SENDGRID_API_KEY)
+
+    response = sg.send(message)
+
+    print(response.status_code, response.body, response.headers)
+
+
+def post_message_to_slack(share_price, changes):
+
+    copy = f"""
+    Here's your stock report!\n\n
+    The current share price is: {share_price["day"]}\n\n
+    
+    {tabulate([
+        ['Today', share_price["day"], 0, "£0"],
+        ['Last Week', share_price['week'], changes['week_change'], f"{changes['week_change_abs']}"],
+        ['Last 28 Days', share_price['month'], changes['month_change'], f"£{changes['month_change_abs']}"],
+        ['Last 6 months', share_price['half_year'], changes['half_change'], f"£{changes['half_change_abs']}"],
+        ['Last Year', share_price['year'], changes['year_change'], f"£{changes['year_change_abs']}"]
+    ], headers=['Time Period', 'Share Price', '% Change', '£ Change'])}
+    """
+    return requests.post(os.getenv("WEBHOOK_URL"), json.dumps({"channel": "nc-shares", "text": copy}))

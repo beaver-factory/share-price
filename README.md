@@ -1,19 +1,19 @@
-# NC-SHARE-ALERTS
+# SHARE-ALERTS
 
 This app provides weekly updates on the performance of the [Northcoders Groups PLC (CODE)](https://www.londonstockexchange.com/stock/CODE/northcoders-group-plc/company-page) share price.
 
 ## Roadmap
 
-| Version | Update       | Feature                        | Completed |
-| ------- | ------------ | ------------------------------ | --------- |
-| v0.1.0  | Email        | Mid-week price snapshot        | ✅        |
-| v0.2.0  | Email        | %/£ change in last week        | ✅        |
-| v0.3.0  | Email        | %/£ change in last week vs AIM |           |
-| v0.4.0  | Email        | %/£/AIM change in last 28 days |           |
-| v0.5.0  | Email        | %/£/AIM change in last 6 month |           |
-| v0.6.0  | Email        | %/£/AIM change in last year    |           |
-| v0.7.0  | Email, Slack | v0.6.0                         |           |
-| v0.8.0  | Email, Slack | a nice graph                   |           |
+| Version | Update       | Feature                      | Completed |
+| ------- | ------------ | ---------------------------- | --------- |
+| v0.1.0  | Email        | Mid-week price snapshot      | ✅        |
+| v0.2.0  | Email        | %/£ change in last week      | ✅        |
+| v0.3.0  | Email        | %/£ change in last 28 days   | ✅        |
+| v0.4.0  | Email        | %/£ change in last 6 month   | ✅        |
+| v0.5.0  | Email        | %/£ change in last year      | ✅        |
+| v0.6.0  | Email, Slack | implement slack notification |           |
+| v0.7.0  | Email, Slack | a nice graph                 |           |
+| v0.8.0  | Email, Slack | User can choose stock        |           |
 
 ## Dependencies
 
