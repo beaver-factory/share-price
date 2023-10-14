@@ -76,7 +76,7 @@ def send_share_email(user_email, html_data_string):
     email_body = insert_into_html('email_copy.html', html_data_string)
 
     message = Mail(
-        from_email='{FROM_EMAIL}',
+        from_email=FROM_EMAIL,
         to_emails=user_email,
         subject='Your Share Price Update!',
         html_content=email_body
