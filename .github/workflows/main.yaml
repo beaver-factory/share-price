@@ -1,4 +1,4 @@
-name: "STONKS"
+name: "Send Stock Report"
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ env:
   WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
 jobs:
-  get-stonky:
+  Send:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
