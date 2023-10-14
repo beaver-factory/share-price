@@ -1,6 +1,6 @@
 # SHARE-ALERTS
 
-This app provides weekly updates on the performance of the [Northcoders Groups PLC (CODE)](https://www.londonstockexchange.com/stock/CODE/northcoders-group-plc/company-page) share price.
+This app was created as part of a collection of time-limited code challenges, usually used as a way to explore different tech. It provides weekly updates on the performance of a share price chosen by the user.
 
 ## Roadmap
 
@@ -13,7 +13,7 @@ This app provides weekly updates on the performance of the [Northcoders Groups P
 | v0.5.0  | Email        | %/£ change in last year      | ✅        |
 | v0.6.0  | Email, Slack | implement slack notification | ✅        |
 | v0.7.0  | Email, Slack | a nice graph                 |           |
-| v0.8.0  | Email, Slack | User can choose stock        |           |
+| v0.8.0  | Email, Slack | User can choose stock        | ✅        |
 
 ## Dependencies
 
@@ -24,15 +24,25 @@ This app provides weekly updates on the performance of the [Northcoders Groups P
 
 ## Run locally
 
+### Environment
+
+Required variables:
+
+```
+EOD_API_KEY='< an eodhd api key >'
+EOD_API_STOCK='< an eodhd api stock code >'
+SEND_KEY_SECRET='< a unique key, identical to SEND_KEY, can be anything >'
+SEND_KEY='< a unique key, identical to SEND_KEY_SECRET, can be anything >'
+FROM_EMAIL='< a valid sendgrid account email >'
+TO_EMAILS='< a comma+space separated list of emails, or a single email >'
+SENDGRID_API_KEY='< a valid sendgrid api key >'
+```
+
+### Running
+
 ```bash
 make run
 ```
-
-## Architecture
-
-Keep it simple. A single github workflow can be used to [schedule](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule) the weekly cron.
-
-Then you _just_ need to write some code that gets all the data required for the features.
 
 ## Testing
 
